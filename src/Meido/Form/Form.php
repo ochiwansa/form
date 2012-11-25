@@ -54,7 +54,7 @@ class Form {
 			$attributes['accept-charset'] = $this->encoding;
 		}
 
-		return '<form'.$this->app->html->attributes($attributes).'>'.$append;
+		return '<form'.$this->app->html->attributes($attributes).'>';
 	}
 
 	/**

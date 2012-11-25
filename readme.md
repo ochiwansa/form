@@ -23,7 +23,7 @@ add `"meido/form": ">=1.0.0"` to the `require` section of your composer.json so 
 add the following code to the `providers` section of the `app/config/app.php` file
 
 ```php
-'Meido\HTML\FormServiceProvider',
+'Meido\Form\FormServiceProvider',
 ```
 
 so that it'll look something like the following
@@ -38,7 +38,7 @@ so that it'll look something like the following
 	'Illuminate\Translation\TranslationServiceProvider',
 	'Illuminate\Validation\ValidationServiceProvider',
 	'Illuminate\Foundation\Providers\AliasServiceProvider',
-	'Meido\HTML\FormServiceProvider',
+	'Meido\Form\FormServiceProvider',
 
 ),
 ```
@@ -47,4 +47,4 @@ after that, run `composer install` and start hacking on that beast.
 
 ## Thing to note
 
-- Custom HTML macro are not implemented yet at the moment.
+- Custom Form macro are not implemented yet at the moment.

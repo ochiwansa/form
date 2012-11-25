@@ -156,7 +156,7 @@ class Form {
 	 */
 	public function label($name, $value, $attributes = array())
 	{
-		$this->$labels[] = $name;
+		$this->labels[] = $name;
 
 		$attributes = $this->app->html->attributes($attributes);
 
@@ -556,7 +556,7 @@ class Form {
 			return $attributes['id'];
 		}
 
-		if (in_array($name, $this->$labels))
+		if (in_array($name, $this->labels))
 		{
 			return $name;
 		}

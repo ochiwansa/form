@@ -5,6 +5,13 @@ use Illuminate\Container;
 class Form {
 
 	/**
+	 * All of the label names that have been created.
+	 *
+	 * @var array
+	 */
+	protected $labels = array();
+
+	/**
 	 * The encoding to use
 	 * 
 	 * @var string

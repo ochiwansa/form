@@ -1,4 +1,4 @@
-<?php namespace Meido\Form;
+<?php namespace Meido\Form\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -7,12 +7,11 @@ class FormServiceProvider extends ServiceProvider {
 	/**
 	 * Register the service provider.
 	 *
-	 * @param  Illuminate\Foundation\Application  $app
 	 * @return void
 	 */
-	public function register($app)
+	public function register()
 	{
-		$app['form'] = $app->share(function($app)
+		$this->app['form'] = $this->app->share(function($app)
 		{
 			return new Form($app);
 		});

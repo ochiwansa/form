@@ -6,10 +6,9 @@ A port of Laravel 3's Form class. Made to work with Laravel 4.
 
 ### Composer Side
 
-add `"meido/form": ">=1.0.0"` to the `require` section of your composer.json so that it should look something the code below (you can, of course, include your own dependencies)
+add `"meido/form": ">=1.0.0"` to the `require` section of your `composer.json` so that it should look something the code below (you can, of course, include your own dependencies)
 
 ```composer
-// composer.json
 "require": {
 	...
 	...
@@ -23,7 +22,7 @@ add `"meido/form": ">=1.0.0"` to the `require` section of your composer.json so 
 add the following code to the `providers` section of the `app/config/app.php` file
 
 ```php
-'Meido\Form\FormServiceProvider',
+'Meido\Form\Providers\FormServiceProvider',
 ```
 
 so that it'll look something like the following
@@ -43,9 +42,29 @@ so that it'll look something like the following
 ),
 ```
 
+
+and add the following code to the `aliases` section of the `app/config/app.php` file
+
+```php
+'Form' => 'Meido\Form\Facades\Form',
+```
+
+so that it'll look something like the following
+
+```php
+'aliases' => array(
+
+	...
+	...
+	...
+	'Form'       => 'Meido\Form\Facades\Form',
+	
+),
+```
+
 after that, run `composer install` and start hacking on that beast.
 
 ## Thing to note
 
-- Custom Form macro are not implemented yet at the moment.
-- PUT & DELETE request are not supported yet at the moment.
+- Custom Form macro are not supported.
+- PUT & DELETE request are not supported.

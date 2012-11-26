@@ -89,7 +89,7 @@ class Form {
 	 *
 	 * @param  string $action
 	 * @param  string $method
-	 * @param  array $attributes
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function openSecure($action = null, $method = 'POST', $attributes = array())
@@ -102,8 +102,8 @@ class Form {
 	 *
 	 * @param  string $action
 	 * @param  string $method
-	 * @param  array $attributes
-	 * @param  bool  $https
+	 * @param  array  $attributes
+	 * @param  bool   $https
 	 * @return string
 	 */
 	public function openForFiles($action = null, $method = 'POST', $attributes = array(), $https = null)
@@ -118,7 +118,7 @@ class Form {
 	 *
 	 * @param  string $action
 	 * @param  string $method
-	 * @param  array $attributes
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function openSecureForFiles($action = null, $method = 'POST', $attributes = array())
@@ -151,7 +151,7 @@ class Form {
 	 *
 	 * @param  string $name
 	 * @param  string $value
-	 * @param  array $attributes
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function label($name, $value, $attributes = array())
@@ -171,7 +171,7 @@ class Form {
 	 * @param  string $type
 	 * @param  string $name
 	 * @param  mixed $value
-	 * @param  array $attributes
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function input($type, $name, $value = null, $attributes = array())
@@ -190,7 +190,7 @@ class Form {
 	 *
 	 * @param  string $name
 	 * @param  string $value
-	 * @param  array $attributes
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function text($name, $value = null, $attributes = array())
@@ -202,7 +202,7 @@ class Form {
 	 * Create a HTML password input element.
 	 *
 	 * @param  string $name
-	 * @param  array $attributes
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function password($name, $attributes = array())
@@ -215,7 +215,7 @@ class Form {
 	 *
 	 * @param  string $name
 	 * @param  string $value
-	 * @param  array $attributes
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function hidden($name, $value = null, $attributes = array())
@@ -228,7 +228,7 @@ class Form {
 	 *
 	 * @param  string $name
 	 * @param  string $value
-	 * @param  array $attributes
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function search($name, $value = null, $attributes = array())
@@ -241,7 +241,7 @@ class Form {
 	 *
 	 * @param  string $name
 	 * @param  string $value
-	 * @param  array $attributes
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function email($name, $value = null, $attributes = array())
@@ -254,7 +254,7 @@ class Form {
 	 *
 	 * @param  string $name
 	 * @param  string $value
-	 * @param  array $attributes
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function telephone($name, $value = null, $attributes = array())
@@ -267,7 +267,7 @@ class Form {
 	 *
 	 * @param  string $name
 	 * @param  string $value
-	 * @param  array $attributes
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function url($name, $value = null, $attributes = array())
@@ -280,7 +280,7 @@ class Form {
 	 *
 	 * @param  string $name
 	 * @param  string $value
-	 * @param  array $attributes
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function number($name, $value = null, $attributes = array())
@@ -293,7 +293,7 @@ class Form {
 	 *
 	 * @param  string $name
 	 * @param  string $value
-	 * @param  array $attributes
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function date($name, $value = null, $attributes = array())
@@ -305,7 +305,7 @@ class Form {
 	 * Create a HTML file input element.
 	 *
 	 * @param  string $name
-	 * @param  array $attributes
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function file($name, $attributes = array())
@@ -318,7 +318,7 @@ class Form {
 	 *
 	 * @param  string $name
 	 * @param  string $value
-	 * @param  array $attributes
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function textarea($name, $value = '', $attributes = array())
@@ -337,18 +337,10 @@ class Form {
 	/**
 	 * Create a HTML select element.
 	 *
-	 * <code>
-	 *		// Create a HTML select element filled with options
-	 *		echo Form::select('sizes', array('S' => 'Small', 'L' => 'Large'));
-	 *
-	 *		// Create a select element with a default selected value
-	 *		echo Form::select('sizes', array('S' => 'Small', 'L' => 'Large'), 'L');
-	 * </code>
-	 *
 	 * @param  string $name
-	 * @param  array $options
+	 * @param  array  $options
 	 * @param  string $selected
-	 * @param  array $attributes
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function select($name, $options = array(), $selected = null, $attributes = array())
@@ -377,7 +369,7 @@ class Form {
 	/**
 	 * Create a HTML select element optgroup.
 	 *
-	 * @param  array $options
+	 * @param  array  $options
 	 * @param  string $label
 	 * @param  string $selected
 	 * @return string
@@ -421,18 +413,10 @@ class Form {
 	/**
 	 * Create a HTML checkbox input element.
 	 *
-	 * <code>
-	 *		// Create a checkbox element
-	 *		echo Form::checkbox('terms', 'yes');
-	 *
-	 *		// Create a checkbox that is selected by default
-	 *		echo Form::checkbox('terms', 'yes', true);
-	 * </code>
-	 *
 	 * @param  string $name
 	 * @param  string $value
-	 * @param  bool  $checked
-	 * @param  array $attributes
+	 * @param  bool   $checked
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function checkbox($name, $value = 1, $checked = false, $attributes = array())
@@ -443,18 +427,10 @@ class Form {
 	/**
 	 * Create a HTML radio button input element.
 	 *
-	 * <code>
-	 *		// Create a radio button element
-	 *		echo Form::radio('drinks', 'Milk');
-	 *
-	 *		// Create a radio button that is selected by default
-	 *		echo Form::radio('drinks', 'Milk', true);
-	 * </code>
-	 *
 	 * @param  string $name
 	 * @param  string $value
-	 * @param  bool  $checked
-	 * @param  array $attributes
+	 * @param  bool   $checked
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function radio($name, $value = null, $checked = false, $attributes = array())
@@ -470,8 +446,8 @@ class Form {
 	 * @param  string $type
 	 * @param  string $name
 	 * @param  string $value
-	 * @param  bool  $checked
-	 * @param  array $attributes
+	 * @param  bool   $checked
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	protected function checkable($type, $name, $value, $checked, $attributes)
@@ -487,7 +463,7 @@ class Form {
 	 * Create a HTML submit input element.
 	 *
 	 * @param  string $value
-	 * @param  array $attributes
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function submit($value = null, $attributes = array())
@@ -499,7 +475,7 @@ class Form {
 	 * Create a HTML reset input element.
 	 *
 	 * @param  string $value
-	 * @param  array $attributes
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function reset($value = null, $attributes = array())
@@ -510,14 +486,9 @@ class Form {
 	/**
 	 * Create a HTML image input element.
 	 *
-	 * <code>
-	 *		// Create an image input element
-	 *		echo Form::image('img/submit.png');
-	 * </code>
-	 *
 	 * @param  string $url
 	 * @param  string $name
-	 * @param  array $attributes
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function image($url, $name = null, $attributes = array())
@@ -531,7 +502,7 @@ class Form {
 	 * Create a HTML button element.
 	 *
 	 * @param  string $value
-	 * @param  array $attributes
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function button($value = null, $attributes = array())
@@ -543,7 +514,7 @@ class Form {
 	 * Determine the ID attribute for a form element.
 	 *
 	 * @param  string $name
-	 * @param  array $attributes
+	 * @param  array  $attributes
 	 * @return mixed
 	 */
 	protected function id($name, $attributes)

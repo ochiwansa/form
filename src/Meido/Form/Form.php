@@ -92,7 +92,7 @@ class Form {
 	 * @param  array $attributes
 	 * @return string
 	 */
-	public function open_secure($action = null, $method = 'POST', $attributes = array())
+	public function openSecure($action = null, $method = 'POST', $attributes = array())
 	{
 		return $this->open($action, $method, $attributes, true);
 	}
@@ -106,7 +106,7 @@ class Form {
 	 * @param  bool  $https
 	 * @return string
 	 */
-	public function open_for_files($action = null, $method = 'POST', $attributes = array(), $https = null)
+	public function openForFiles($action = null, $method = 'POST', $attributes = array(), $https = null)
 	{
 		$attributes['enctype'] = 'multipart/form-data';
 
@@ -121,9 +121,9 @@ class Form {
 	 * @param  array $attributes
 	 * @return string
 	 */
-	public function open_secure_for_files($action = null, $method = 'POST', $attributes = array())
+	public function openSecureForFiles($action = null, $method = 'POST', $attributes = array())
 	{
-		return $this->open_for_files($action, $method, $attributes, true);
+		return $this->openForFiles($action, $method, $attributes, true);
 	}
 
 	/**

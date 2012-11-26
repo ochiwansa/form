@@ -1,6 +1,7 @@
 <?php namespace Meido\Form\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Meido\Form\Form;
 
 class FormServiceProvider extends ServiceProvider {
 

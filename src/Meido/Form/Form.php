@@ -1,6 +1,6 @@
 <?php namespace Meido\Form;
 
-use Illuminate\Container;
+use Illuminate\Foundation\Application;
 
 class Form {
 
@@ -19,14 +19,14 @@ class Form {
 	protected $encoding = 'utf-8';
 
 	/**
-	 * The inversion of control container instance
+	 * The app instance
 	 * @var Illuminate\Container
 	 */
-	protected $container;
+	protected $app;
 
-	public function __construct(Container $container = null)
+	public function __construct(Application $app = null)
 	{
-		$this->container = $container;
+		$this->app = $app;
 	}
 
 	/**
@@ -64,7 +64,7 @@ class Form {
 			$append = $this->hidden('_method', $method);
 		}
 
-		return '<form'.$this->container->html->attributes($attributes).'>'.$append;
+		return '<form'.$this->app->html->attributes($attributes).'>'.$append;
 	}
 
 	/**
@@ -89,9 +89,9 @@ class Form {
 	 */
 	protected function action($action, $https)
 	{
-		$uri = (is_null($action)) ? $this->container->request->path() : $action;
+		$uri = (is_null($action)) ? $this->app->request->path() : $action;
 
-		return $this->container->html->entities($this->container->url->to($uri, $https));
+		return $this->app->html->entities($this->app->url->to($uri, $https));
 	}
 
 	/**
@@ -153,7 +153,7 @@ class Form {
 	 */
 	public function token()
 	{
-		return $this->input('hidden', 'csrf_token', $this->container->session->getToken());
+		return $this->input('hidden', 'csrf_token', $this->app->session->getToken());
 	}
 
 	/**
@@ -168,9 +168,9 @@ class Form {
 	{
 		$this->labels[] = $name;
 
-		$attributes = $this->container->html->attributes($attributes);
+		$attributes = $this->app->html->attributes($attributes);
 
-		$value = $this->container->html->entities($value);
+		$value = $this->app->html->entities($value);
 
 		return '<label for="'.$name.'"'.$attributes.'>'.$value.'</label>';
 	}
@@ -192,7 +192,7 @@ class Form {
 
 		$attributes = array_merge($attributes, compact('type', 'name', 'value', 'id'));
 
-		return '<input'.$this->container->html->attributes($attributes).'>';
+		return '<input'.$this->app->html->attributes($attributes).'>';
 	}
 
 	/**
@@ -341,7 +341,7 @@ class Form {
 
 		if ( ! isset($attributes['cols'])) $attributes['cols'] = 50;
 
-		return '<textarea'.$this->container->html->attributes($attributes).'>'.$this->container->html->entities($value).'</textarea>';
+		return '<textarea'.$this->app->html->attributes($attributes).'>'.$this->app->html->entities($value).'</textarea>';
 	}
 
 	/**
@@ -373,7 +373,7 @@ class Form {
 			}
 		}
 
-		return '<select'.$this->container->html->attributes($attributes).'>'.implode('', $html).'</select>';
+		return '<select'.$this->app->html->attributes($attributes).'>'.implode('', $html).'</select>';
 	}
 
 	/**
@@ -393,7 +393,7 @@ class Form {
 			$html[] = $this->option($value, $display, $selected);
 		}
 
-		return '<optgroup label="'.$this->container->html->entities($label).'">'.implode('', $html).'</optgroup>';
+		return '<optgroup label="'.$this->app->html->entities($label).'">'.implode('', $html).'</optgroup>';
 	}
 
 	/**
@@ -415,9 +415,9 @@ class Form {
 			$selected = ((string) $value == (string) $selected) ? 'selected' : null;
 		}
 
-		$attributes = array('value' => $this->container->html->entities($value), 'selected' => $selected);
+		$attributes = array('value' => $this->app->html->entities($value), 'selected' => $selected);
 
-		return '<option'.$this->container->html->attributes($attributes).'>'.$this->container->html->entities($display).'</option>';
+		return '<option'.$this->app->html->attributes($attributes).'>'.$this->app->html->entities($display).'</option>';
 	}
 
 	/**
@@ -503,7 +503,7 @@ class Form {
 	 */
 	public function image($url, $name = null, $attributes = array())
 	{
-		$attributes['src'] = $this->container->url->to_asset($url);
+		$attributes['src'] = $this->app->url->to_asset($url);
 
 		return $this->input('image', $name, null, $attributes);
 	}
@@ -517,7 +517,7 @@ class Form {
 	 */
 	public function button($value = null, $attributes = array())
 	{
-		return '<button'.$this->container->html->attributes($attributes).'>'.$this->container->html->entities($value).'</button>';
+		return '<button'.$this->app->html->attributes($attributes).'>'.$this->app->html->entities($value).'</button>';
 	}
 
 	/**

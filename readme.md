@@ -67,4 +67,3 @@ after that, run `composer install` and start hacking on that beast.
 ## Thing to note
 
 - Custom Form macro are not supported.
-- PUT & DELETE request are not supported.

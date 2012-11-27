@@ -54,7 +54,17 @@ class Form {
 			$attributes['accept-charset'] = $this->encoding;
 		}
 
-		return '<form'.$this->container->html->attributes($attributes).'>';
+		$append = '';
+
+		// Since PUT and DELETE methods are not actually supported by HTML forms,
+		// we'll create a hidden input element that contains the request method
+		// and set the actual request method variable to POST.
+		if ($method == 'PUT' or $method == 'DELETE')
+		{
+			$append = $this->hidden('_method', $method);
+		}
+
+		return '<form'.$this->container->html->attributes($attributes).'>'.$append;
 	}
 
 	/**

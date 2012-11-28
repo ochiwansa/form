@@ -1,5 +1,7 @@
 # Meido Form
 
+[![Build Status](https://secure.travis-ci.org/meido/form.png?branch=master)](https://travis-ci.org/meido/form)
+
 A port of Laravel 3's Form class. Made to work with Laravel 4.
 
 ## Usage

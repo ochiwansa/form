@@ -180,7 +180,7 @@ class Form {
 	 *
 	 * @param  string $type
 	 * @param  string $name
-	 * @param  mixed $value
+	 * @param  mixed  $value
 	 * @param  array  $attributes
 	 * @return string
 	 */

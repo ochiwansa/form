@@ -8,7 +8,14 @@ use Meido\Form\Form;
 
 class FormTest extends PHPUnit_Framework_TestCase {
 
+	/**
+	 * The app instance
+	 */
 	protected $app;
+
+	/**
+	 * The form instance
+	 */
 	protected $form;
 
 	/**

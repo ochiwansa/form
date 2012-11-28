@@ -39,7 +39,7 @@ so that it'll look something like the following
 	'Illuminate\Translation\TranslationServiceProvider',
 	'Illuminate\Validation\ValidationServiceProvider',
 	'Illuminate\Foundation\Providers\AliasServiceProvider',
-	'Meido\Form\FormServiceProvider',
+	'Meido\Form\Providers\FormServiceProvider',
 
 ),
 ```

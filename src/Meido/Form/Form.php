@@ -503,7 +503,7 @@ class Form {
 	 */
 	public function image($url, $name = null, $attributes = array())
 	{
-		$attributes['src'] = $this->app->url->to_asset($url);
+		$attributes['src'] = $this->app->url->to($url);
 
 		return $this->input('image', $name, null, $attributes);
 	}

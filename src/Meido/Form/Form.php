@@ -91,7 +91,7 @@ class Form {
 	{
 		$uri = (is_null($action)) ? $this->app->request->path() : $action;
 
-		return $this->app->html->entities($this->app->url->to($uri, $https));
+		return $this->app->html->entities($this->app->url->to($uri, array(), $https));
 	}
 
 	/**

@@ -1,7 +1,7 @@
 <?php
 
 use Mockery as m;
-use Illuminate\Foundation\Lightbulb;
+use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 use Meido\HTML\HTML;
 use Meido\Form\Form;
@@ -23,7 +23,7 @@ class FormTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function setUp()
 	{
-		$this->app = Lightbulb::on();
+		$this->app = new Application;
 		$this->app['request'] = Request::create('/');
 		$this->app['html'] = new HTML($this->app);
 		$this->form = new Form($this->app);

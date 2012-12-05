@@ -1,6 +1,6 @@
 <?php namespace Meido\Form\Facades;
 
-use Illuminate\Support\Facade;
+use Illuminate\Support\Facades\Facade;
 
 class Form extends Facade {
 

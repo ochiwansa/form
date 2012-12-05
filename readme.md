@@ -2,11 +2,11 @@
 
 A port of Laravel 3's Form class. Made to work with Laravel 4.
 
-- [Usage][usage]
-- [Changelog][changelog]
-- [Things To Note][things-to-note]
+- [Usage](https://github.com/meido/form#usage)
+- [Changelog](https://github.com/meido/form#usage)
+- [Things To Note](https://github.com/meido/form#usage)
 
-## Usage [usage]
+## Usage
 
 ### Composer Side
 
@@ -69,7 +69,7 @@ so that it'll look something like the following
 
 after that, run `composer install` and start hacking on that beast.
 
-## Changelog [changelog]
+## Changelog
 
 ### 1.0.1
 - updated readme
@@ -78,6 +78,6 @@ after that, run `composer install` and start hacking on that beast.
 ### 1.0.0
 - tagged for stable release
 
-## Things to note [things-to-note]
+## Things to note
 
 - Custom Form macro are not supported.

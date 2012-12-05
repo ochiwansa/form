@@ -1,10 +1,12 @@
-# Meido Form
-
-[![Build Status](https://secure.travis-ci.org/meido/form.png?branch=master)](https://travis-ci.org/meido/form)
+# Meido Form [![Build Status](https://secure.travis-ci.org/meido/form.png?branch=master)](https://travis-ci.org/meido/form)
 
 A port of Laravel 3's Form class. Made to work with Laravel 4.
 
-## Usage
+- [Usage][usage]
+- [Changelog][changelog]
+- [Things To Note][things-to-note]
+
+## Usage [usage]
 
 ### Composer Side
 
@@ -67,6 +69,15 @@ so that it'll look something like the following
 
 after that, run `composer install` and start hacking on that beast.
 
-## Thing to note
+## Changelog [changelog]
+
+### 1.0.1
+- updated readme
+- updated illuminate component to stable version
+
+### 1.0.0
+- tagged for stable release
+
+## Things to note [things-to-note]
 
 - Custom Form macro are not supported.

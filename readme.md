@@ -71,12 +71,10 @@ after that, run `composer install` and start hacking on that beast.
 
 ## Changelog
 
-### 1.0.1
-- updated readme
-- updated illuminate component to stable version
-
-### 1.0.0
-- tagged for stable release
+### 1.0.*
+- tagged for stable release. (1.0.0)
+- updated illuminate component to stable version. (1.0.1)
+- updated Facade namespace. (1.0.2)
 
 ## Things to note
 

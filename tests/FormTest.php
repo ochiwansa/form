@@ -25,7 +25,7 @@ class FormTest extends PHPUnit_Framework_TestCase {
 	{
 		$this->app = new Application;
 		$this->app['request'] = Request::create('/');
-		$this->app['html'] = new HTML($this->app);
+		$this->app['html'] = new HTML($this->app->url);
 		$this->form = new Form($this->app);
 	}
 

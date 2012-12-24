@@ -147,16 +147,6 @@ class Form {
 	}
 
 	/**
-	 * Generate a hidden field containing the current CSRF token.
-	 *
-	 * @return string
-	 */
-	public function token()
-	{
-		return $this->input('hidden', 'csrf_token', $this->app->session->getToken());
-	}
-
-	/**
 	 * Create a HTML label element.
 	 *
 	 * @param  string $name

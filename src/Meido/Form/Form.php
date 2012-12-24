@@ -1,6 +1,8 @@
 <?php namespace Meido\Form;
 
 use Illuminate\Foundation\Application;
+use Illuminate\Routing\UrlGenerator;
+use Meido\HTML\HTML;
 
 class Form {
 
@@ -19,14 +21,15 @@ class Form {
 	protected $encoding = 'utf-8';
 
 	/**
-	 * The app instance
-	 * @var Illuminate\Container
+	 * The HTML helper
+	 * 
+	 * @var Meido\HTML\HTML
 	 */
-	protected $app;
+	protected $html;
 
-	public function __construct(Application $app = null)
+	public function __construct(UrlGenerator $url)
 	{
-		$this->app = $app;
+		$this->html = new HTML($url);
 	}
 
 	/**
@@ -64,7 +67,7 @@ class Form {
 			$append = $this->hidden('_method', $method);
 		}
 
-		return '<form'.$this->app->html->attributes($attributes).'>'.$append;
+		return '<form'.$this->html->attributes($attributes).'>'.$append;
 	}
 
 	/**
@@ -89,9 +92,9 @@ class Form {
 	 */
 	protected function action($action, $https)
 	{
-		$uri = (is_null($action)) ? $this->app->request->path() : $action;
+		$uri = (is_null($action)) ? $this->html->getUrlGenerator()->getRequest()->path() : $action;
 
-		return $this->app->html->entities($this->app->url->to($uri, array(), $https));
+		return $this->html->entities($this->html->getUrlGenerator()->to($uri, array(), $https));
 	}
 
 	/**
@@ -158,9 +161,9 @@ class Form {
 	{
 		$this->labels[] = $name;
 
-		$attributes = $this->app->html->attributes($attributes);
+		$attributes = $this->html->attributes($attributes);
 
-		$value = $this->app->html->entities($value);
+		$value = $this->html->entities($value);
 
 		return '<label for="'.$name.'"'.$attributes.'>'.$value.'</label>';
 	}
@@ -182,7 +185,7 @@ class Form {
 
 		$attributes = array_merge($attributes, compact('type', 'name', 'value', 'id'));
 
-		return '<input'.$this->app->html->attributes($attributes).'>';
+		return '<input'.$this->html->attributes($attributes).'>';
 	}
 
 	/**
@@ -331,7 +334,7 @@ class Form {
 
 		if ( ! isset($attributes['cols'])) $attributes['cols'] = 50;
 
-		return '<textarea'.$this->app->html->attributes($attributes).'>'.$this->app->html->entities($value).'</textarea>';
+		return '<textarea'.$this->html->attributes($attributes).'>'.$this->html->entities($value).'</textarea>';
 	}
 
 	/**
@@ -363,7 +366,7 @@ class Form {
 			}
 		}
 
-		return '<select'.$this->app->html->attributes($attributes).'>'.implode('', $html).'</select>';
+		return '<select'.$this->html->attributes($attributes).'>'.implode('', $html).'</select>';
 	}
 
 	/**
@@ -383,7 +386,7 @@ class Form {
 			$html[] = $this->option($value, $display, $selected);
 		}
 
-		return '<optgroup label="'.$this->app->html->entities($label).'">'.implode('', $html).'</optgroup>';
+		return '<optgroup label="'.$this->html->entities($label).'">'.implode('', $html).'</optgroup>';
 	}
 
 	/**
@@ -405,9 +408,9 @@ class Form {
 			$selected = ((string) $value == (string) $selected) ? 'selected' : null;
 		}
 
-		$attributes = array('value' => $this->app->html->entities($value), 'selected' => $selected);
+		$attributes = array('value' => $this->html->entities($value), 'selected' => $selected);
 
-		return '<option'.$this->app->html->attributes($attributes).'>'.$this->app->html->entities($display).'</option>';
+		return '<option'.$this->html->attributes($attributes).'>'.$this->html->entities($display).'</option>';
 	}
 
 	/**
@@ -493,7 +496,7 @@ class Form {
 	 */
 	public function image($url, $name = null, $attributes = array())
 	{
-		$attributes['src'] = $this->app->url->to($url);
+		$attributes['src'] = $this->html->getUrlGenerator()->to($url);
 
 		return $this->input('image', $name, null, $attributes);
 	}
@@ -507,7 +510,7 @@ class Form {
 	 */
 	public function button($value = null, $attributes = array())
 	{
-		return '<button'.$this->app->html->attributes($attributes).'>'.$this->app->html->entities($value).'</button>';
+		return '<button'.$this->html->attributes($attributes).'>'.$this->html->entities($value).'</button>';
 	}
 
 	/**

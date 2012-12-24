@@ -1,17 +1,12 @@
 <?php
 
 use Mockery as m;
-use Illuminate\Foundation\Application;
+use Symfony\Component\Routing\RouteCollection;
+use Illuminate\Routing\UrlGenerator;
 use Illuminate\Http\Request;
-use Meido\HTML\HTML;
 use Meido\Form\Form;
 
 class FormTest extends PHPUnit_Framework_TestCase {
-
-	/**
-	 * The app instance
-	 */
-	protected $app;
 
 	/**
 	 * The form instance
@@ -23,10 +18,8 @@ class FormTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function setUp()
 	{
-		$this->app = new Application;
-		$this->app['request'] = Request::create('/');
-		$this->app['html'] = new HTML($this->app->url);
-		$this->form = new Form($this->app);
+		$url = new UrlGenerator(new RouteCollection, Request::create('/', 'GET'));
+		$this->form = new Form($url);
 	}
 
 	/**

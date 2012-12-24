@@ -21,7 +21,7 @@ class FormServiceProvider extends ServiceProvider {
 	{
 		$this->app['form'] = $this->app->share(function($app)
 		{
-			return new Form($app);
+			return new Form($app->url);
 		});
 	}
 

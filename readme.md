@@ -78,6 +78,7 @@ after that, run `composer install` and start hacking on that beast.
 - some tweaks are made. (1.0.3)
 	- `Form::token` is removed, use `csrf_token` with a `Form::hidden` instead.
 	- `Form` class make use of `HTML` class heavily and the `UrlGenerator` inside `HTML` class. Hence, parameters passed to `Form` will just be the `UrlGenerator` class which will be passed to `HTML` instead of depending on `illuminate/foundation` for `Application` class in which is not used at all.
+- updated properties access for `$labels` (1.0.4)
 
 ## Things to note
 

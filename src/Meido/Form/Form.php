@@ -11,7 +11,7 @@ class Form {
 	 *
 	 * @var array
 	 */
-	protected $labels = array();
+	public $labels = array();
 
 	/**
 	 * The encoding to use

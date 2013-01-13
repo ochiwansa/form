@@ -1,4 +1,4 @@
-<?php namespace Meido\Form\Facades;
+<?php namespace Meido\Form;
 
 use Illuminate\Support\Facades\Facade;
 

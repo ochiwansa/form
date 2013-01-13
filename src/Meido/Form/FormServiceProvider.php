@@ -1,4 +1,4 @@
-<?php namespace Meido\Form\Providers;
+<?php namespace Meido\Form;
 
 use Illuminate\Support\ServiceProvider;
 use Meido\Form\Form;

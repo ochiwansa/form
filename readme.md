@@ -10,7 +10,7 @@ A port of Laravel 3's Form class. Made to work with Laravel 4.
 
 ### Composer Side
 
-add `"meido/form": "1.0.*"` to the `require` section of your `composer.json` so that it should look something the code below (you can, of course, include your own dependencies)
+add `"meido/form": "1.1.*"` to the `require` section of your `composer.json` so that it should look something the code below (you can, of course, include your own dependencies)
 
 ```composer
 ...
@@ -20,7 +20,7 @@ add `"meido/form": "1.0.*"` to the `require` section of your `composer.json` so 
 	...
 	...
 	...
-	"meido/form": "1.0.*"
+	"meido/form": "1.1.*"
 },
 ...
 ...
@@ -32,7 +32,7 @@ add `"meido/form": "1.0.*"` to the `require` section of your `composer.json` so 
 add the following code to the `providers` section of the `app/config/app.php` file
 
 ```php
-'Meido\Form\Providers\FormServiceProvider',
+'Meido\Form\FormServiceProvider',
 ```
 
 so that it'll look something like the following
@@ -43,7 +43,7 @@ so that it'll look something like the following
 	...
 	...
 	...
-	'Meido\Form\Providers\FormServiceProvider',
+	'Meido\Form\FormServiceProvider',
 
 ),
 ```
@@ -51,7 +51,7 @@ so that it'll look something like the following
 and add the following code to the `aliases` section of the `app/config/app.php` file
 
 ```php
-'Form' => 'Meido\Form\Facades\Form',
+'Form' => 'Meido\Form\FormFacade',
 ```
 
 so that it'll look something like the following
@@ -62,7 +62,7 @@ so that it'll look something like the following
 	...
 	...
 	...
-	'Form'       => 'Meido\Form\Facades\Form',
+	'Form'       => 'Meido\Form\FormFacade',
 
 ),
 ```
@@ -70,6 +70,12 @@ so that it'll look something like the following
 after that, run `composer install` and start hacking on that beast.
 
 ## Changelog
+
+### 1.1.*
+- below are the changes made on 1.1.0
+	- updated illuminate component to `dev-master`
+	- updated `meido/html` to `1.1.*`
+	- moved `Facade` and `ServiceProvider` up one folder following Laravel 4's convention of developing packages.
 
 ### 1.0.*
 - tagged for stable release. (1.0.0)

@@ -42,8 +42,8 @@ class FormTest extends PHPUnit_Framework_TestCase {
 
 		$this->assertEquals('<form method="GET" action="http://localhost/foobar" accept-charset="utf-8">', $form1);
 		$this->assertEquals('<form method="POST" action="http://localhost/foobar" accept-charset="utf-8">', $form2);
-		$this->assertEquals('<form method="POST" action="http://localhost/foobar" accept-charset="utf-8"><input type="hidden" name="_method" value="PUT">', $form3);
-		$this->assertEquals('<form method="POST" action="http://localhost/foobar" accept-charset="utf-8"><input type="hidden" name="_method" value="DELETE">', $form4);
+		$this->assertEquals('<form method="POST" action="http://localhost/foobar" accept-charset="utf-8"><input type="hidden" name="_method" value="PUT" />', $form3);
+		$this->assertEquals('<form method="POST" action="http://localhost/foobar" accept-charset="utf-8"><input type="hidden" name="_method" value="DELETE" />', $form4);
 	}
 
 	/**
@@ -58,8 +58,8 @@ class FormTest extends PHPUnit_Framework_TestCase {
 
 		$this->assertEquals('<form method="GET" action="https://localhost/foobar" accept-charset="utf-8">', $form1);
 		$this->assertEquals('<form method="POST" action="https://localhost/foobar" accept-charset="utf-8">', $form2);
-		$this->assertEquals('<form method="POST" action="https://localhost/foobar" accept-charset="utf-8"><input type="hidden" name="_method" value="PUT">', $form3);
-		$this->assertEquals('<form method="POST" action="https://localhost/foobar" accept-charset="utf-8"><input type="hidden" name="_method" value="DELETE">', $form4);
+		$this->assertEquals('<form method="POST" action="https://localhost/foobar" accept-charset="utf-8"><input type="hidden" name="_method" value="PUT" />', $form3);
+		$this->assertEquals('<form method="POST" action="https://localhost/foobar" accept-charset="utf-8"><input type="hidden" name="_method" value="DELETE" />', $form4);
 	}
 
 	/**
@@ -74,8 +74,8 @@ class FormTest extends PHPUnit_Framework_TestCase {
 
 		$this->assertEquals('<form enctype="multipart/form-data" method="GET" action="http://localhost/foobar" accept-charset="utf-8">', $form1);
 		$this->assertEquals('<form enctype="multipart/form-data" method="POST" action="http://localhost/foobar" accept-charset="utf-8">', $form2);
-		$this->assertEquals('<form enctype="multipart/form-data" method="POST" action="http://localhost/foobar" accept-charset="utf-8"><input type="hidden" name="_method" value="PUT">', $form3);
-		$this->assertEquals('<form enctype="multipart/form-data" method="POST" action="http://localhost/foobar" accept-charset="utf-8"><input type="hidden" name="_method" value="DELETE">', $form4);
+		$this->assertEquals('<form enctype="multipart/form-data" method="POST" action="http://localhost/foobar" accept-charset="utf-8"><input type="hidden" name="_method" value="PUT" />', $form3);
+		$this->assertEquals('<form enctype="multipart/form-data" method="POST" action="http://localhost/foobar" accept-charset="utf-8"><input type="hidden" name="_method" value="DELETE" />', $form4);
 	}
 
 	/**
@@ -90,8 +90,8 @@ class FormTest extends PHPUnit_Framework_TestCase {
 
 		$this->assertEquals('<form enctype="multipart/form-data" method="GET" action="https://localhost/foobar" accept-charset="utf-8">', $form1);
 		$this->assertEquals('<form enctype="multipart/form-data" method="POST" action="https://localhost/foobar" accept-charset="utf-8">', $form2);
-		$this->assertEquals('<form enctype="multipart/form-data" method="POST" action="https://localhost/foobar" accept-charset="utf-8"><input type="hidden" name="_method" value="PUT">', $form3);
-		$this->assertEquals('<form enctype="multipart/form-data" method="POST" action="https://localhost/foobar" accept-charset="utf-8"><input type="hidden" name="_method" value="DELETE">', $form4);
+		$this->assertEquals('<form enctype="multipart/form-data" method="POST" action="https://localhost/foobar" accept-charset="utf-8"><input type="hidden" name="_method" value="PUT" />', $form3);
+		$this->assertEquals('<form enctype="multipart/form-data" method="POST" action="https://localhost/foobar" accept-charset="utf-8"><input type="hidden" name="_method" value="DELETE" />', $form4);
 	}
 
 	/**
@@ -125,10 +125,10 @@ class FormTest extends PHPUnit_Framework_TestCase {
 		$form3 = $this->form->text('foo', 'foobar');
 		$form4 = $this->form->text('foo', null, array('class' => 'span2'));
 
-		$this->assertEquals('<input type="text" name="foo" id="foo">', $form1);
+		$this->assertEquals('<input type="text" name="foo" id="foo" />', $form1);
 		$this->assertEquals($form1, $form2);
-		$this->assertEquals('<input type="text" name="foo" value="foobar" id="foo">', $form3);
-		$this->assertEquals('<input class="span2" type="text" name="foo" id="foo">', $form4);
+		$this->assertEquals('<input type="text" name="foo" value="foobar" id="foo" />', $form3);
+		$this->assertEquals('<input class="span2" type="text" name="foo" id="foo" />', $form4);
 	}
 
 	/**
@@ -141,9 +141,9 @@ class FormTest extends PHPUnit_Framework_TestCase {
 		$form2 = $this->form->password('foo');
 		$form3 = $this->form->password('foo', array('class' => 'span2'));
 
-		$this->assertEquals('<input type="password" name="foo" id="foo">', $form1);
+		$this->assertEquals('<input type="password" name="foo" id="foo" />', $form1);
 		$this->assertEquals($form1, $form2);
-		$this->assertEquals('<input class="span2" type="password" name="foo" id="foo">', $form3);
+		$this->assertEquals('<input class="span2" type="password" name="foo" id="foo" />', $form3);
 	}
 
 	/**
@@ -157,10 +157,10 @@ class FormTest extends PHPUnit_Framework_TestCase {
 		$form3 = $this->form->hidden('foo', 'foobar');
 		$form4 = $this->form->hidden('foo', null, array('class' => 'span2'));
 
-		$this->assertEquals('<input type="hidden" name="foo" id="foo">', $form1);
+		$this->assertEquals('<input type="hidden" name="foo" id="foo" />', $form1);
 		$this->assertEquals($form1, $form2);
-		$this->assertEquals('<input type="hidden" name="foo" value="foobar" id="foo">', $form3);
-		$this->assertEquals('<input class="span2" type="hidden" name="foo" id="foo">', $form4);
+		$this->assertEquals('<input type="hidden" name="foo" value="foobar" id="foo" />', $form3);
+		$this->assertEquals('<input class="span2" type="hidden" name="foo" id="foo" />', $form4);
 	}
 
 	/**
@@ -174,10 +174,10 @@ class FormTest extends PHPUnit_Framework_TestCase {
 		$form3 = $this->form->search('foo', 'foobar');
 		$form4 = $this->form->search('foo', null, array('class' => 'span2'));
 
-		$this->assertEquals('<input type="search" name="foo" id="foo">', $form1);
+		$this->assertEquals('<input type="search" name="foo" id="foo" />', $form1);
 		$this->assertEquals($form1, $form2);
-		$this->assertEquals('<input type="search" name="foo" value="foobar" id="foo">', $form3);
-		$this->assertEquals('<input class="span2" type="search" name="foo" id="foo">', $form4);
+		$this->assertEquals('<input type="search" name="foo" value="foobar" id="foo" />', $form3);
+		$this->assertEquals('<input class="span2" type="search" name="foo" id="foo" />', $form4);
 	}
 
 	/**
@@ -191,10 +191,10 @@ class FormTest extends PHPUnit_Framework_TestCase {
 		$form3 = $this->form->email('foo', 'foobar');
 		$form4 = $this->form->email('foo', null, array('class' => 'span2'));
 
-		$this->assertEquals('<input type="email" name="foo" id="foo">', $form1);
+		$this->assertEquals('<input type="email" name="foo" id="foo" />', $form1);
 		$this->assertEquals($form1, $form2);
-		$this->assertEquals('<input type="email" name="foo" value="foobar" id="foo">', $form3);
-		$this->assertEquals('<input class="span2" type="email" name="foo" id="foo">', $form4);
+		$this->assertEquals('<input type="email" name="foo" value="foobar" id="foo" />', $form3);
+		$this->assertEquals('<input class="span2" type="email" name="foo" id="foo" />', $form4);
 	}
 
 	/**
@@ -208,10 +208,10 @@ class FormTest extends PHPUnit_Framework_TestCase {
 		$form3 = $this->form->telephone('foo', 'foobar');
 		$form4 = $this->form->telephone('foo', null, array('class' => 'span2'));
 
-		$this->assertEquals('<input type="tel" name="foo" id="foo">', $form1);
+		$this->assertEquals('<input type="tel" name="foo" id="foo" />', $form1);
 		$this->assertEquals($form1, $form2);
-		$this->assertEquals('<input type="tel" name="foo" value="foobar" id="foo">', $form3);
-		$this->assertEquals('<input class="span2" type="tel" name="foo" id="foo">', $form4);
+		$this->assertEquals('<input type="tel" name="foo" value="foobar" id="foo" />', $form3);
+		$this->assertEquals('<input class="span2" type="tel" name="foo" id="foo" />', $form4);
 	}
 
 	/**
@@ -225,10 +225,10 @@ class FormTest extends PHPUnit_Framework_TestCase {
 		$form3 = $this->form->url('foo', 'foobar');
 		$form4 = $this->form->url('foo', null, array('class' => 'span2'));
 
-		$this->assertEquals('<input type="url" name="foo" id="foo">', $form1);
+		$this->assertEquals('<input type="url" name="foo" id="foo" />', $form1);
 		$this->assertEquals($form1, $form2);
-		$this->assertEquals('<input type="url" name="foo" value="foobar" id="foo">', $form3);
-		$this->assertEquals('<input class="span2" type="url" name="foo" id="foo">', $form4);
+		$this->assertEquals('<input type="url" name="foo" value="foobar" id="foo" />', $form3);
+		$this->assertEquals('<input class="span2" type="url" name="foo" id="foo" />', $form4);
 	}
 
 	/**
@@ -242,10 +242,10 @@ class FormTest extends PHPUnit_Framework_TestCase {
 		$form3 = $this->form->number('foo', 'foobar');
 		$form4 = $this->form->number('foo', null, array('class' => 'span2'));
 
-		$this->assertEquals('<input type="number" name="foo" id="foo">', $form1);
+		$this->assertEquals('<input type="number" name="foo" id="foo" />', $form1);
 		$this->assertEquals($form1, $form2);
-		$this->assertEquals('<input type="number" name="foo" value="foobar" id="foo">', $form3);
-		$this->assertEquals('<input class="span2" type="number" name="foo" id="foo">', $form4);
+		$this->assertEquals('<input type="number" name="foo" value="foobar" id="foo" />', $form3);
+		$this->assertEquals('<input class="span2" type="number" name="foo" id="foo" />', $form4);
 	}
 
 	/**
@@ -259,10 +259,10 @@ class FormTest extends PHPUnit_Framework_TestCase {
 		$form3 = $this->form->date('foo', 'foobar');
 		$form4 = $this->form->date('foo', null, array('class' => 'span2'));
 
-		$this->assertEquals('<input type="date" name="foo" id="foo">', $form1);
+		$this->assertEquals('<input type="date" name="foo" id="foo" />', $form1);
 		$this->assertEquals($form1, $form2);
-		$this->assertEquals('<input type="date" name="foo" value="foobar" id="foo">', $form3);
-		$this->assertEquals('<input class="span2" type="date" name="foo" id="foo">', $form4);
+		$this->assertEquals('<input type="date" name="foo" value="foobar" id="foo" />', $form3);
+		$this->assertEquals('<input class="span2" type="date" name="foo" id="foo" />', $form4);
 	}
 
 	/**
@@ -275,9 +275,9 @@ class FormTest extends PHPUnit_Framework_TestCase {
 		$form2 = $this->form->file('foo');
 		$form3 = $this->form->file('foo', array('class' => 'span2'));
 
-		$this->assertEquals('<input type="file" name="foo" id="foo">', $form1);
+		$this->assertEquals('<input type="file" name="foo" id="foo" />', $form1);
 		$this->assertEquals($form1, $form2);
-		$this->assertEquals('<input class="span2" type="file" name="foo" id="foo">', $form3);
+		$this->assertEquals('<input class="span2" type="file" name="foo" id="foo" />', $form3);
 	}
 
 	/**
@@ -335,10 +335,10 @@ class FormTest extends PHPUnit_Framework_TestCase {
 		$form3 = $this->form->checkbox('foo', 'foobar', true);
 		$form4 = $this->form->checkbox('foo', 'foobar', false, array('class' => 'span2'));
 
-		$this->assertEquals('<input type="checkbox" name="foo" id="foo">', $form1);
-		$this->assertEquals('<input id="foo" type="checkbox" name="foo" value="1">', $form2);
-		$this->assertEquals('<input checked="checked" id="foo" type="checkbox" name="foo" value="foobar">', $form3);
-		$this->assertEquals('<input class="span2" id="foo" type="checkbox" name="foo" value="foobar">', $form4);
+		$this->assertEquals('<input type="checkbox" name="foo" id="foo" />', $form1);
+		$this->assertEquals('<input id="foo" type="checkbox" name="foo" value="1" />', $form2);
+		$this->assertEquals('<input checked="checked" id="foo" type="checkbox" name="foo" value="foobar" />', $form3);
+		$this->assertEquals('<input class="span2" id="foo" type="checkbox" name="foo" value="foobar" />', $form4);
 	}
 
 	/**
@@ -352,10 +352,10 @@ class FormTest extends PHPUnit_Framework_TestCase {
 		$form3 = $this->form->radio('foo', 'foobar', true);
 		$form4 = $this->form->radio('foo', 'foobar', false, array('class' => 'span2'));
 
-		$this->assertEquals('<input type="radio" name="foo" id="foo">', $form1);
-		$this->assertEquals('<input id="foo" type="radio" name="foo" value="foo">', $form2);
-		$this->assertEquals('<input checked="checked" id="foo" type="radio" name="foo" value="foobar">', $form3);
-		$this->assertEquals('<input class="span2" id="foo" type="radio" name="foo" value="foobar">', $form4);
+		$this->assertEquals('<input type="radio" name="foo" id="foo" />', $form1);
+		$this->assertEquals('<input id="foo" type="radio" name="foo" value="foo" />', $form2);
+		$this->assertEquals('<input checked="checked" id="foo" type="radio" name="foo" value="foobar" />', $form3);
+		$this->assertEquals('<input class="span2" id="foo" type="radio" name="foo" value="foobar" />', $form4);
 	}
 
 	/**
@@ -367,8 +367,8 @@ class FormTest extends PHPUnit_Framework_TestCase {
 		$form1 = $this->form->submit('foo');
 		$form2 = $this->form->submit('foo', array('class' => 'span2'));
 
-		$this->assertEquals('<input type="submit" value="foo">', $form1);
-		$this->assertEquals('<input class="span2" type="submit" value="foo">', $form2);
+		$this->assertEquals('<input type="submit" value="foo" />', $form1);
+		$this->assertEquals('<input class="span2" type="submit" value="foo" />', $form2);
 	}
 
 	/**
@@ -380,8 +380,8 @@ class FormTest extends PHPUnit_Framework_TestCase {
 		$form1 = $this->form->reset('foo');
 		$form2 = $this->form->reset('foo', array('class' => 'span2'));
 
-		$this->assertEquals('<input type="reset" value="foo">', $form1);
-		$this->assertEquals('<input class="span2" type="reset" value="foo">', $form2);
+		$this->assertEquals('<input type="reset" value="foo" />', $form1);
+		$this->assertEquals('<input class="span2" type="reset" value="foo" />', $form2);
 	}
 
 	/**
@@ -394,9 +394,9 @@ class FormTest extends PHPUnit_Framework_TestCase {
 		$form2 = $this->form->image('foo/bar', 'foo', array('class' => 'span2'));
 		$form3 = $this->form->image('http://google.com/foobar', 'foobar');
 
-		$this->assertEquals('<input src="http://localhost/foo/bar" type="image" name="foo" id="foo">', $form1);
-		$this->assertEquals('<input class="span2" src="http://localhost/foo/bar" type="image" name="foo" id="foo">', $form2);
-		$this->assertEquals('<input src="http://google.com/foobar" type="image" name="foobar">', $form3);
+		$this->assertEquals('<input src="http://localhost/foo/bar" type="image" name="foo" id="foo" />', $form1);
+		$this->assertEquals('<input class="span2" src="http://localhost/foo/bar" type="image" name="foo" id="foo" />', $form2);
+		$this->assertEquals('<input src="http://google.com/foobar" type="image" name="foobar" />', $form3);
 
 	}
 

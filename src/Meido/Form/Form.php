@@ -15,14 +15,14 @@ class Form {
 
 	/**
 	 * The encoding to use
-	 * 
+	 *
 	 * @var string
 	 */
 	protected $encoding = 'utf-8';
 
 	/**
 	 * The HTML helper
-	 * 
+	 *
 	 * @var Meido\HTML\HTML
 	 */
 	protected $html;

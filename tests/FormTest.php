@@ -311,7 +311,7 @@ class FormTest extends PHPUnit_Framework_TestCase {
 			),
 			'hello'  => 'Hello World',
 		);
-		
+
 		$label1 = $this->form->label('foo', 'FooBar');
 		$form1 = $this->form->select('foo');
 		$form2 = $this->form->select('foo', $select1, 'foobar');

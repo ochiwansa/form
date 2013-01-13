@@ -185,7 +185,7 @@ class Form {
 
 		$attributes = array_merge($attributes, compact('type', 'name', 'value', 'id'));
 
-		return '<input'.$this->html->attributes($attributes).'>';
+		return '<input'.$this->html->attributes($attributes).' />';
 	}
 
 	/**

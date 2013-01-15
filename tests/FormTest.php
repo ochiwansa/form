@@ -1,6 +1,5 @@
 <?php
 
-use Mockery as m;
 use Symfony\Component\Routing\RouteCollection;
 use Illuminate\Routing\UrlGenerator;
 use Illuminate\Http\Request;
@@ -20,14 +19,6 @@ class FormTest extends PHPUnit_Framework_TestCase {
 	{
 		$url = new UrlGenerator(new RouteCollection, Request::create('/', 'GET'));
 		$this->form = new Form($url);
-	}
-
-	/**
-	 * Destroy test environment.
-	 */
-	public function tearDown()
-	{
-		m::close();
 	}
 
 	/**

@@ -1,7 +1,6 @@
 <?php namespace Meido\Form;
 
 use Illuminate\Support\ServiceProvider;
-use Meido\Form\Form;
 
 class FormServiceProvider extends ServiceProvider {
 
@@ -10,7 +9,17 @@ class FormServiceProvider extends ServiceProvider {
 	 *
 	 * @var bool
 	 */
-	protected $defer = true;
+	protected $defer = false;
+
+	/**
+	 * Bootstrap the application events.
+	 *
+	 * @return void
+	 */
+	public function boot()
+	{
+		$this->package('meido/form');
+	}
 
 	/**
 	 * Register the service provider.
@@ -21,7 +30,7 @@ class FormServiceProvider extends ServiceProvider {
 	{
 		$this->app['form'] = $this->app->share(function($app)
 		{
-			return new Form($app->url);
+			return new Form($app['url']);
 		});
 	}
 

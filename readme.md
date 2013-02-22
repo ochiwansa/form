@@ -3,7 +3,7 @@
 A port of Laravel 3's Form class. Made to work with Laravel 4.
 
 - [Usage](https://github.com/meido/form#usage)
-- [Changelog](https://github.com/meido/form#usage)
+- [Changelog](https://github.com/meido/form#changelog)
 
 ## Usage
 

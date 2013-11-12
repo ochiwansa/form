@@ -11,7 +11,7 @@
         "php": ">=5.3.0",
         "illuminate/support": "4.0.x",
         "illuminate/routing": "4.0.x",
-        "meido/html": "1.1.x"
+        "jonob/html": "1.1.x"
     },
     "autoload": {
         "classmap": [
